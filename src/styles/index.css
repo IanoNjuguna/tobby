@@ -1,0 +1,22 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+@keyframes textColorCycle {
+  0% {
+    color: #1a1a1a;
+  }
+  33% {
+    color: #254441;
+  }
+  66% {
+    color: #231123;
+  }
+  100% {
+    color: #1a1a1a;
+  }
+}
+
+.animate-text-color {
+  animation: textColorCycle 6s infinite ease-in-out;
+}
