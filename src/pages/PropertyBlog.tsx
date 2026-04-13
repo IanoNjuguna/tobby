@@ -110,7 +110,7 @@ export default function PropertyBlog() {
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    className="absolute top-full left-0 mt-4 w-64 bg-[#0A0A0A] border border-white/10 p-6 z-[60] shadow-2xl"
+                    className="absolute top-full right-0 mt-4 w-64 bg-[#0A0A0A] border border-white/10 p-6 z-[120] shadow-2xl"
                   >
                     <div className="flex flex-col gap-4">
                       {filterOptions.map((type) => (
