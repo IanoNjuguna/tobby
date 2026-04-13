@@ -212,7 +212,7 @@ export default function PropertyDetails() {
               href="https://wa.me/254758264337"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full py-6 bg-emerald-500 text-black font-bold tracking-[0.2em] hover:bg-emerald-400 transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#F97316] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="hidden md:inline-flex items-center justify-center w-full py-6 bg-emerald-500 text-black font-bold tracking-[0.2em] hover:bg-emerald-400 transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#F97316] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
               INQUIRE NOW
             </a>
