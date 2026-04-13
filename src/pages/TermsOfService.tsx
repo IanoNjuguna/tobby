@@ -220,7 +220,7 @@ export default function TermsOfService() {
                 <li>Informal negotiation between parties</li>
                 <li>Mediation through neutral third-party mediator</li>
                 <li>Binding arbitration if mediation fails</li>
-                <li>All disputes governed by laws of California</li>
+                <li>All disputes governed by laws of Kenya</li>
               </ul>
               <p className="leading-relaxed mt-4">
                 Each party bears their own costs for dispute resolution, except as otherwise required by law.
@@ -247,10 +247,10 @@ export default function TermsOfService() {
                 For questions about these terms or our services:
               </p>
               <div className="bg-black/20 p-4 rounded">
-                <p className="mb-2"><strong>Email:</strong> legal@tobillionhomes.com</p>
-                <p className="mb-2"><strong>Phone:</strong> (310) 555-0100</p>
-                <p className="mb-2"><strong>Address:</strong> 123 Luxury Lane, Beverly Hills, CA 90210</p>
-                <p><strong>License Number:</strong> CA BRE #01234567</p>
+                <p className="mb-2"><strong>Email:</strong> tobillionhomes@gmail.com</p>
+                <p className="mb-2"><strong>Phone:</strong> +254 758 264 337</p>
+                <p className="mb-2"><strong>Address:</strong> Nairobi, Kenya</p>
+                <p><strong>Response Time:</strong> Within 48 hours for all inquiries</p>
               </div>
             </section>
 

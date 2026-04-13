@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import PrivacyPolicy from '../pages/PrivacyPolicy';
 import TermsOfService from '../pages/TermsOfService';
-
-const heroImage = "/villa.jpg";
+import PropertyDetails from '../pages/PropertyDetails';
+import PropertyCard from '../components/PropertyCard';
+import PropertyBlog from '../pages/PropertyBlog';
+import { properties } from '../data/properties';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,6 +15,8 @@ export default function App() {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const heroImage = "/villa.jpg";
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -20,7 +24,6 @@ export default function App() {
 
       if (propertiesSection) {
         const propertiesSectionTop = propertiesSection.offsetTop;
-        // Keep navbar sticky (fixed) through featured listings section
         setIsScrolled(scrollPosition >= propertiesSectionTop - 100);
       }
     };
@@ -32,10 +35,10 @@ export default function App() {
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
-    }, 7000); // 7 seconds
+    }, 7000); 
 
     return () => clearInterval(interval);
-  }, [currentSlide]); // Reset interval when slide changes
+  }, [currentSlide]); 
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % properties.length);
@@ -74,44 +77,14 @@ export default function App() {
       prevSlide();
     }
   };
-  const properties = [
-    {
-      id: 1,
-      image: "/modern.jpg",
-      title: "Modern Estate Villa",
-      location: "Beverly Hills, CA",
-      price: "$4,850,000",
-      beds: 5,
-      baths: 4,
-      sqft: "4,200"
-    },
-    {
-      id: 2,
-      image: "/dacha.jpg",
-      title: "Luxury Mountain Retreat",
-      location: "Aspen, CO",
-      price: "$6,200,000",
-      beds: 6,
-      baths: 5,
-      sqft: "5,800"
-    },
-    {
-      id: 3,
-      image: "/coast.jpg",
-      title: "Coastal Paradise Home",
-      location: "Malibu, CA",
-      price: "$8,900,000",
-      beds: 7,
-      baths: 6,
-      sqft: "6,500"
-    }
-  ];
 
   return (
     <Router>
       <Routes>
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/property" element={<PropertyBlog />} />
+        <Route path="/property/atana-terraces" element={<PropertyDetails />} />
         <Route path="*" element={
           <div className="min-h-screen bg-gradient-to-b from-emerald-950 via-black to-emerald-950">
             {/* Hero Section */}
@@ -119,13 +92,13 @@ export default function App() {
               <nav className={`inset-x-0 top-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/10 transition-all duration-300 ${isScrolled ? 'absolute' : 'fixed'
                 }`}>
                 <div className="max-w-7xl mx-auto flex justify-between items-center px-6 sm:px-8 py-5">
-                  <h1 className="text-xl sm:text-2xl tracking-tight text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>
+                  <Link to="/" className="text-xl sm:text-2xl tracking-tight text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>
                     TOBILLION HOMES
-                  </h1>
+                  </Link>
                   <div className="flex gap-4 sm:gap-12 items-center">
-                    <a href="#properties" className="hidden md:block text-white/80 hover:text-white transition-colors text-sm tracking-wide" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>
-                      FEATURED LISTINGS
-                    </a>
+                    <Link to="/property" className="hidden md:block text-white/80 hover:text-white transition-colors text-sm tracking-wide" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>
+                      PUBLIC LISTINGS
+                    </Link>
                     <a href="#about" className="hidden md:block text-white/80 hover:text-white transition-colors text-sm tracking-wide" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>
                       ABOUT
                     </a>
@@ -172,14 +145,14 @@ export default function App() {
                       </button>
                     </div>
                     <div className="flex flex-col gap-6">
-                      <a
-                        href="#properties"
+                      <Link
+                        to="/property"
                         onClick={() => setIsMenuOpen(false)}
                         className="text-2xl font-bold tracking-wider text-[#C084FC] hover:text-[#F97316] transition-colors"
                         style={{ fontFamily: 'Poppins, sans-serif' }}
                       >
-                        FEATURED LISTINGS
-                      </a>
+                        PUBLIC LISTINGS
+                      </Link>
                       <a
                         href="#about"
                         onClick={() => setIsMenuOpen(false)}
@@ -231,43 +204,62 @@ export default function App() {
                 )}
               </AnimatePresence>
               <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
-              <div className="relative z-10 max-w-7xl mx-auto h-full px-8 py-10">
-                <div className="grid h-full w-full gap-10 lg:grid-cols-[1.35fr_0.9fr] items-center">
-                  <div className="text-white">
-                    <h2 className="text-5xl sm:text-6xl lg:text-7xl font-semibold leading-tight mb-6" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}>
+              <div className="relative z-10 max-w-7xl mx-auto px-8 min-h-[calc(100vh-80px)] flex items-center py-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+                  {/* Left Column: Content */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-white"
+                  >
+                    <h2 className="text-5xl sm:text-6xl lg:text-7xl font-semibold leading-tight mb-8" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}>
                       It all starts with the perfect residence.
                     </h2>
-                    <p className="max-w-2xl text-lg text-white/80 mb-10" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
+                    <p className="max-w-xl text-lg text-white/80 mb-12 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
                       We specialize in the exclusive and iconic homes of Westlands, Riverside, Karen, Runda, Kitisuru, Loresho, Kilimani, Kileleshwa, Parklands, Kiambu Road and Syokimau.
                     </p>
-                  </div>
-                  <div className="flex flex-col gap-5 sm:flex-row mt-4 mb-8 sm:mb-0">
-                    <a href="#properties" className="inline-flex items-center justify-center bg-white px-10 py-4 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_white] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                      PUBLIC LISTINGS
-                    </a>
-                    <button className="inline-flex items-center justify-center bg-[#C084FC] px-10 py-4 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                      OFF-MARKET LISTINGS
-                    </button>
-                  </div>
-                </div>
-                <div className="group relative overflow-hidden border border-white/10 shadow-[8px_8px_0px_0px_transparent] hover:shadow-[8px_8px_0px_0px_#F97316] bg-black/10 transition-shadow duration-300">
-                  <img
-                    src={heroImage}
-                    alt="Featured luxury property"
-                    className="h-[400px] sm:h-[560px] w-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <p className="text-xs uppercase tracking-[0.35em] text-white/70" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>
-                      Modern Residency
-                    </p>
-                    <h3 className="mt-3 text-3xl text-white font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}>
-                      Family Estates
-                    </h3>
-                    <p className="mt-2 text-sm text-white/70 max-w-sm" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
-                      Built for shared mornings, quiet evenings, communal gatherings and privacy.
-                    </p>
-                  </div>
+                    <div className="flex flex-col gap-5 sm:flex-row">
+                      <Link to="/property" className="inline-flex items-center justify-center bg-white px-10 py-5 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_white] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                        PUBLIC LISTINGS
+                      </Link>
+                      <a 
+                        href="https://chat.whatsapp.com/JjkU6Gi28efDSNNJ2jl2N7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center bg-[#C084FC] px-10 py-5 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" 
+                        style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                      >
+                        OFF-MARKET LISTINGS
+                      </a>
+                    </div>
+                  </motion.div>
+
+                  {/* Right Column: Hero Image */}
+                  <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="group relative overflow-hidden border border-white/10 shadow-[8px_8px_0px_0px_transparent] hover:shadow-[8px_8px_0px_0px_#F97316] bg-black/10 transition-shadow duration-300"
+                  >
+                    <img
+                      src={heroImage}
+                      alt="Featured luxury property"
+                      className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8">
+                      <p className="text-xs uppercase tracking-[0.35em] text-white/70" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>
+                        Modern Residency
+                      </p>
+                      <h3 className="mt-3 text-3xl text-white font-semibold" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700 }}>
+                        Family Estates
+                      </h3>
+                      <p className="mt-2 text-sm text-white/70 max-w-sm" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
+                        Built for shared mornings, quiet evenings, communal gatherings and privacy.
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </section>
@@ -283,10 +275,10 @@ export default function App() {
                   >
                     Featured Listings
                   </h2>
-
                 </div>
 
-                {/* Mobile Slideshow */}
+
+                {/* Mobile Slideshow - Teaser */}
                 <div className="md:hidden bg-[#0A0A0A] relative">
                   <div
                     className="relative overflow-hidden bg-[#0A0A0A]"
@@ -303,63 +295,7 @@ export default function App() {
                         transition={{ duration: 0.3 }}
                         className="w-full bg-[#0A0A0A]"
                       >
-                        <div className="group bg-[#0A0A0A] border border-white/5 hover:border-[#F97316]/50 overflow-hidden transition-all duration-500 hover:shadow-[8px_8px_0px_0px_#F97316] aspect-square">
-                          <div className="relative h-full overflow-hidden">
-                            <img
-                              src={properties[currentSlide].image}
-                              alt={properties[currentSlide].title}
-                              className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-60"></div>
-                            <div className="absolute top-4 right-4 px-3 py-1 bg-black border border-white/10">
-                              <span className="text-white text-xs tracking-widest font-bold" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                                NEW LISTING
-                              </span>
-                            </div>
-                          </div>
-                          <div className="p-8">
-                            <h3
-                              className="text-2xl text-white mb-3"
-                              style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, letterSpacing: '-0.02em' }}
-                            >
-                              {properties[currentSlide].title}
-                            </h3>
-                            <p
-                              className="text-neutral-400 mb-6"
-                              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
-                            >
-                              {properties[currentSlide].location}
-                            </p>
-                            <div className="mb-6">
-                              <span
-                                className="text-4xl text-emerald-400"
-                                style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}
-                              >
-                                {properties[currentSlide].price}
-                              </span>
-                            </div>
-                            <div className="flex gap-6 text-neutral-400 mb-8 pb-8 border-b border-neutral-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                              <div className="flex flex-col">
-                                <span className="text-white text-lg" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>{properties[currentSlide].beds}</span>
-                                <span className="text-xs text-neutral-500" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>BEDS</span>
-                              </div>
-                              <div className="flex flex-col">
-                                <span className="text-white text-lg" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>{properties[currentSlide].baths}</span>
-                                <span className="text-xs text-neutral-500" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>BATHS</span>
-                              </div>
-                              <div className="flex flex-col">
-                                <span className="text-white text-lg" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>{properties[currentSlide].sqft}</span>
-                                <span className="text-xs text-neutral-500" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>SQFT</span>
-                              </div>
-                            </div>
-                            <button
-                              className="w-full py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
-                              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-                            >
-                              VIEW DETAILS
-                            </button>
-                          </div>
-                        </div>
+                        {properties[currentSlide] && <PropertyCard property={properties[currentSlide]} />}
                       </motion.div>
                     </AnimatePresence>
 
@@ -379,83 +315,24 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Desktop Grid */}
+                {/* Desktop Grid - Top Picks Teaser */}
                 <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-                  {properties.map((property) => (
-                    <div
-                      key={property.id}
-                      className="group bg-[#0A0A0A] border border-white/5 hover:border-[#F97316]/50 overflow-hidden transition-all duration-500 hover:shadow-[8px_8px_0px_0px_#F97316] aspect-square"
-                    >
-                      <div className="relative h-full overflow-hidden">
-                        <img
-                          src={property.image}
-                          alt={property.title}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent opacity-60"></div>
-                        <div className="absolute top-4 right-4 px-3 py-1 bg-black border border-white/10">
-                          <span className="text-white text-xs tracking-widest font-bold" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-                            NEW LISTING
-                          </span>
-                        </div>
-                      </div>
-                      <div className="p-8">
-                        <h3
-                          className="text-2xl text-white mb-3"
-                          style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 700, letterSpacing: '-0.02em' }}
-                        >
-                          {property.title}
-                        </h3>
-                        <p
-                          className="text-neutral-400 mb-6"
-                          style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}
-                        >
-                          {property.location}
-                        </p>
-                        <div className="mb-6">
-                          <span
-                            className="text-4xl text-emerald-400"
-                            style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}
-                          >
-                            {property.price}
-                          </span>
-                        </div>
-                        <div className="flex gap-6 text-neutral-400 mb-8 pb-8 border-b border-neutral-800" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                          <div className="flex flex-col">
-                            <span className="text-white text-lg" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>{property.beds}</span>
-                            <span className="text-xs text-neutral-500" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>BEDS</span>
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-white text-lg" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>{property.baths}</span>
-                            <span className="text-xs text-neutral-500" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>BATHS</span>
-                          </div>
-                          <div className="flex flex-col">
-                            <span className="text-white text-lg" style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 600 }}>{property.sqft}</span>
-                            <span className="text-xs text-neutral-500" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>SQFT</span>
-                          </div>
-                        </div>
-                        <button
-                          className="w-full py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
-                          style={{ fontFamily: 'Space Grotesk, sans-serif' }}
-                        >
-                          VIEW DETAILS
-                        </button>
-                      </div>
-                    </div>
-                  ))}
+                  <AnimatePresence mode="popLayout">
+                    {properties.slice(0, 3).map((property) => (
+                      <PropertyCard key={property.id} property={property} />
+                    ))}
+                  </AnimatePresence>
                 </div>
 
-                {/* Fade-out overlay */}
-                <div className="absolute bottom-20 left-0 right-0 h-24 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent pointer-events-none"></div>
-
-                {/* Show More Button */}
+                {/* Show All Button */}
                 <div className="flex justify-center mt-12">
-                  <button
+                  <Link
+                    to="/property"
                     className="px-12 py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                     style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                   >
-                    SHOW MORE
-                  </button>
+                    EXPLORE CATALOGUE
+                  </Link>
                 </div>
               </div>
             </section>
@@ -468,7 +345,7 @@ export default function App() {
                     <img
                       src="/family.jpg"
                       alt="Family viewing luxury home"
-                      className="h-[400px] sm:h-[560px] w-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      className="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -505,12 +382,15 @@ export default function App() {
                         <span>A network of trusted architects, designers, and legal advisors</span>
                       </li>
                     </ul>
-                    <button
-                      className="px-10 py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                    <a
+                      href="https://wa.me/254758264337"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-10 py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                       style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                     >
                       BOOK A HOUSE TOUR
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -544,10 +424,10 @@ export default function App() {
                       QUICK LINKS
                     </h4>
                     <ul className="space-y-3" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}>
-                      <li><a href="#properties" className="text-neutral-400 hover:text-white transition-colors">Properties</a></li>
+                      <li><Link to="/property" className="text-neutral-400 hover:text-white transition-colors">Properties</Link></li>
                       <li><a href="#about" className="text-neutral-400 hover:text-white transition-colors">About Us</a></li>
-                      <li><a href="/privacy-policy" className="text-neutral-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                      <li><a href="/terms-of-service" className="text-neutral-400 hover:text-white transition-colors">Terms of Service</a></li>
+                      <li><Link to="/privacy-policy" className="text-neutral-400 hover:text-white transition-colors">Privacy Policy</Link></li>
+                      <li><Link to="/terms-of-service" className="text-neutral-400 hover:text-white transition-colors">Terms of Service</Link></li>
                     </ul>
                   </div>
                   <div>
@@ -555,36 +435,17 @@ export default function App() {
                       className="text-sm mb-6 tracking-widest text-neutral-500"
                       style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}
                     >
-                      SOCIALS
+                      CONTACT
                     </h4>
-                    <ul className="flex space-x-4 text-neutral-400">
-                      <li>
-                        <a href="https://twitter.com/tobillionhomes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                          </svg>
-                        </a>
+                    <ul className="space-y-3 text-neutral-400" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}>
+                      <li className="flex items-center gap-3">
+                        <span className="text-[#C084FC]">📍</span> Nairobi, Kenya
                       </li>
-                      <li>
-                        <a href="https://instagram.com/tobillionhomes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1112.324 0 6.162 6.162 0 01-12.324 0zM12 16a4 4 0 110-8 4 4 0 010 8zm4.965-10.405a1.44 1.44 0 112.881.001 1.44 1.44 0 01-2.881-.001z" />
-                          </svg>
-                        </a>
+                      <li className="flex items-center gap-3">
+                        <span className="text-[#C084FC]">📞</span> +254 758 264 337
                       </li>
-                      <li>
-                        <a href="https://tiktok.com/@tobillionhomes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.64 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.12 2.19-.74 2.77-1.72.05-.09.09-.19.12-.3.26-1.65.24-3.34.24-5.02 0-2.92-.01-5.84.01-8.75z" />
-                          </svg>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://linkedin.com/company/tobillionhomes" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                          </svg>
-                        </a>
+                      <li className="flex items-center gap-3">
+                        <span className="text-[#C084FC]">📧</span> tobillionhomes@gmail.com
                       </li>
                     </ul>
                   </div>
@@ -601,7 +462,7 @@ export default function App() {
             </footer>
           </div>
         } />
-      </Routes >
-    </Router >
+      </Routes>
+    </Router>
   );
 }

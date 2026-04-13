@@ -131,7 +131,7 @@ export default function PrivacyPolicy() {
                 <li><strong>Objection:</strong> Opt out of certain data processing activities</li>
               </ul>
               <p className="leading-relaxed mt-4">
-                To exercise these rights, contact our Privacy Officer at privacy@tobillionhomes.com. We respond to all requests within 30 days.
+                To exercise these rights, contact our Privacy Officer at tobillionhomes@gmail.com. We respond to all requests within 30 days.
               </p>
             </section>
 
@@ -178,9 +178,9 @@ export default function PrivacyPolicy() {
                 For privacy-related questions or concerns, contact:
               </p>
               <div className="bg-black/20 p-4 rounded">
-                <p className="mb-2"><strong>Privacy Officer:</strong> privacy@tobillionhomes.com</p>
-                <p className="mb-2"><strong>Phone:</strong> (310) 555-0100</p>
-                <p className="mb-2"><strong>Address:</strong> 123 Luxury Lane, Beverly Hills, CA 90210</p>
+                <p className="mb-2"><strong>Privacy Officer:</strong> tobillionhomes@gmail.com</p>
+                <p className="mb-2"><strong>Phone:</strong> +254 758 264 337</p>
+                <p className="mb-2"><strong>Address:</strong> Nairobi, Kenya</p>
                 <p><strong>Response Time:</strong> Within 48 hours for all inquiries</p>
               </div>
             </section>
