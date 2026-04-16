@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
               ABOUT
             </a>
             <button
-              className="hidden sm:block px-8 py-2.5 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all text-xs sm:text-sm tracking-widest font-bold shadow-[3px_3px_0px_0px_#F97316] hover:shadow-[3px_3px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="hidden sm:block px-8 py-2.5 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all text-xs sm:text-sm tracking-widest font-bold shadow-[3px_3px_0px_0px_#F97316] hover:shadow-[3px_3px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               CONTACT US
@@ -66,7 +66,7 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">2. Data Usage</h2>
               <p className="leading-relaxed mb-4">
                 Your information is used exclusively for real estate service delivery:
@@ -100,7 +100,7 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">4. Data Security</h2>
               <p className="leading-relaxed mb-4">
                 We implement industry-standard security measures:
@@ -135,7 +135,7 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">6. Cookies and Tracking</h2>
               <p className="leading-relaxed mb-4">
                 Our website uses cookies for:
@@ -158,7 +158,7 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">8. International Data Transfers</h2>
               <p className="leading-relaxed">
                 Your information may be transferred to and processed in countries other than your own. When such transfers occur, we ensure appropriate safeguards are in place to protect your data in accordance with applicable data protection laws.
@@ -172,7 +172,7 @@ export default function PrivacyPolicy() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">10. Contact Information</h2>
               <p className="leading-relaxed mb-4">
                 For privacy-related questions or concerns, contact:

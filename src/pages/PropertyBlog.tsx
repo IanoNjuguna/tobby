@@ -44,7 +44,7 @@ export default function PropertyBlog() {
             <Link to="/" className="text-sm tracking-widest text-white/60 hover:text-white transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
               HOME
             </Link>
-            <a href="mailto:tobillionhomes@gmail.com" className="px-6 py-2 bg-white text-black text-[10px] tracking-[0.2em] font-bold hover:bg-[#C084FC] transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+            <a href="mailto:tobillionhomes@gmail.com" className="px-6 py-2 bg-white text-black text-[10px] tracking-[0.2em] font-bold hover:bg-[#FAFAFA] transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
               CONTACT
             </a>
           </div>
@@ -59,7 +59,7 @@ export default function PropertyBlog() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-xs tracking-[0.4em] text-[#C084FC] font-bold mb-4 block" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+            <span className="text-xs tracking-[0.4em] text-[#FAFAFA] font-bold mb-4 block" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
               PROPERTY CATALOGUE
             </span>
             <h1 className="text-5xl md:text-7xl font-bold mb-8" style={{ fontFamily: 'Space Grotesk, sans-serif', letterSpacing: '-0.02em' }}>
@@ -78,7 +78,7 @@ export default function PropertyBlog() {
                 setIsFilterDropdownOpen(false);
               }}
               className={`px-10 py-4 text-xs tracking-[0.2em] font-bold transition-all border ${selectedTypes.length === 0
-                ? 'bg-[#C084FC] text-black border-[#C084FC] shadow-[4px_4px_0px_0px_#F97316]'
+                ? 'bg-[#FAFAFA] text-black border-[#FAFAFA] shadow-[4px_4px_0px_0px_#F97316]'
                 : 'text-white/40 border-white/10 hover:border-white/40'
                 }`}
               style={{ fontFamily: 'JetBrains Mono, monospace' }}
@@ -122,10 +122,10 @@ export default function PropertyBlog() {
                             toggleType(type);
                           }}
                         >
-                          <span className={`text-sm tracking-widest transition-colors ${selectedTypes.includes(type) ? 'text-[#C084FC]' : 'text-neutral-500 group-hover:text-white'}`} style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+                          <span className={`text-sm tracking-widest transition-colors ${selectedTypes.includes(type) ? 'text-[#FAFAFA]' : 'text-neutral-500 group-hover:text-white'}`} style={{ fontFamily: 'JetBrains Mono, monospace' }}>
                             {type.toUpperCase()}
                           </span>
-                          <div className={`w-5 h-5 border flex items-center justify-center transition-all ${selectedTypes.includes(type) ? 'bg-[#C084FC] border-[#C084FC]' : 'border-neutral-700'}`}>
+                          <div className={`w-5 h-5 border flex items-center justify-center transition-all ${selectedTypes.includes(type) ? 'bg-[#FAFAFA] border-[#FAFAFA]' : 'border-neutral-700'}`}>
                             {selectedTypes.includes(type) && (
                               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="4">
                                 <path d="M20 6L9 17L4 12" />
@@ -164,7 +164,7 @@ export default function PropertyBlog() {
                 </p>
                 <button 
                   onClick={() => setSelectedTypes([])}
-                  className="mt-6 text-[#C084FC] hover:underline tracking-widest text-xs"
+                  className="mt-6 text-[#FAFAFA] hover:underline tracking-widest text-xs"
                 >
                   RESET FILTERS
                 </button>

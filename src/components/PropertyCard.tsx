@@ -94,7 +94,7 @@ export default function PropertyCard({ property }: { property: Property }) {
           </div>
           <Link
             to={property.id === 4 ? `/property/atana-terraces` : '#'}
-            className="w-full py-3 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center text-xs"
+            className="w-full py-3 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center text-xs"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
             VIEW DETAILS

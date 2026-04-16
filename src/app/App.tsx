@@ -136,7 +136,7 @@ export default function App() {
                       </div>
                       <button
                         onClick={() => setIsMenuOpen(false)}
-                        className="p-2 text-white hover:text-[#C084FC] transition-colors"
+                        className="p-2 text-white hover:text-[#FAFAFA] transition-colors"
                       >
                         <div className="w-6 h-5 flex flex-col justify-between relative">
                           <span className="block h-0.5 w-6 bg-white absolute top-2.5 transform transition-transform duration-300 ease-in-out rotate-45"></span>
@@ -148,7 +148,7 @@ export default function App() {
                       <Link
                         to="/property"
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-2xl font-bold tracking-wider text-[#C084FC] hover:text-[#F97316] transition-colors"
+                        className="text-2xl font-bold tracking-wider text-[#FAFAFA] hover:text-[#F97316] transition-colors"
                         style={{ fontFamily: 'Poppins, sans-serif' }}
                       >
                         PUBLIC LISTINGS
@@ -156,7 +156,7 @@ export default function App() {
                       <a
                         href="#about"
                         onClick={() => setIsMenuOpen(false)}
-                        className="text-2xl font-bold tracking-wider text-white hover:text-[#C084FC] transition-colors"
+                        className="text-2xl font-bold tracking-wider text-white hover:text-[#FAFAFA] transition-colors"
                         style={{ fontFamily: 'Poppins, sans-serif' }}
                       >
                         ABOUT
@@ -227,7 +227,7 @@ export default function App() {
                         href="https://chat.whatsapp.com/JjkU6Gi28efDSNNJ2jl2N7"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center bg-[#C084FC] px-10 py-5 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" 
+                        className="inline-flex items-center justify-center bg-[#FAFAFA] px-10 py-5 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_#FAFAFA] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" 
                         style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                       >
                         OFF-MARKET LISTINGS
@@ -306,7 +306,7 @@ export default function App() {
                           key={index}
                           onClick={() => goToSlide(index)}
                           className={`w-2 h-2 rounded-full transition-all ${currentSlide === index
-                            ? 'bg-[#C084FC] w-8'
+                            ? 'bg-[#FAFAFA] w-8'
                             : 'bg-white/30 hover:bg-white/50'
                             }`}
                         />
@@ -328,7 +328,7 @@ export default function App() {
                 <div className="flex justify-center mt-12">
                   <Link
                     to="/property"
-                    className="px-12 py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                    className="px-12 py-4 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                     style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                   >
                     EXPLORE CATALOGUE
@@ -366,19 +366,19 @@ export default function App() {
                     </h2>
                     <ul className="space-y-4 text-lg text-neutral-300 mb-10 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
                       <li className="flex items-start">
-                        <span className="text-[#C084FC] mr-3">·</span>
+                        <span className="text-[#FAFAFA] mr-3">·</span>
                         <span>Exclusive access to off-market and pre-market opportunities in Nairobi's prime neighborhoods</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-[#C084FC] mr-3">·</span>
+                        <span className="text-[#FAFAFA] mr-3">·</span>
                         <span>Tailored advisory</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-[#C084FC] mr-3">·</span>
+                        <span className="text-[#FAFAFA] mr-3">·</span>
                         <span>End-to-end service, i.e: valuation, negotiation, due diligence, and closing</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-[#C084FC] mr-3">·</span>
+                        <span className="text-[#FAFAFA] mr-3">·</span>
                         <span>A network of trusted architects, designers, and legal advisors</span>
                       </li>
                     </ul>
@@ -386,7 +386,7 @@ export default function App() {
                       href="https://wa.me/254758264337"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center px-10 py-4 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                      className="inline-flex items-center justify-center px-10 py-4 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
                       style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                     >
                       BOOK A HOUSE TOUR
@@ -439,13 +439,13 @@ export default function App() {
                     </h4>
                     <ul className="space-y-3 text-neutral-400" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}>
                       <li className="flex items-center gap-3">
-                        <span className="text-[#C084FC]">📍</span> Nairobi, Kenya
+                        <span className="text-[#FAFAFA]">📍</span> Nairobi, Kenya
                       </li>
                       <li className="flex items-center gap-3">
-                        <span className="text-[#C084FC]">📞</span> +254 758 264 337
+                        <span className="text-[#FAFAFA]">📞</span> +254 758 264 337
                       </li>
                       <li className="flex items-center gap-3">
-                        <span className="text-[#C084FC]">📧</span> tobillionhomes@gmail.com
+                        <span className="text-[#FAFAFA]">📧</span> tobillionhomes@gmail.com
                       </li>
                     </ul>
                   </div>
