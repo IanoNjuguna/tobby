@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-transparent via-black/15 to-black/50" />
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
-          <div>
+          <div className="flex flex-col items-center text-center">
             <h3
               className="text-2xl mb-5 tracking-tight"
               style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}
@@ -15,13 +15,13 @@ const Footer = () => {
               TOBILLION HOMES
             </h3>
             <p
-              className="text-neutral-400 leading-relaxed"
+              className="text-neutral-400 leading-relaxed max-w-sm"
               style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}
             >
-              We specialize in the exclusive and iconic homes of Westlands, Riverside, Karen, Runda, Kitisuru, Loresho, Kilimani, Kileleshwa, Parklands, Kiambu Road and Syokimau.
+              We curate a portfolio of the most iconic residences across Nairobi’s most sought-after enclaves.
             </p>
           </div>
-          <div>
+          <div className="flex flex-col items-center text-center">
             <h4
               className="text-sm mb-6 tracking-widest text-neutral-500"
               style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}
@@ -35,22 +35,25 @@ const Footer = () => {
               <li><Link to="/terms-of-service" className="text-neutral-400 hover:text-white transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
-          <div>
+          <div className="flex flex-col items-center text-center">
             <h4
               className="text-sm mb-6 tracking-widest text-neutral-500"
               style={{ fontFamily: 'JetBrains Mono, monospace', fontWeight: 700 }}
             >
               CONTACT
             </h4>
-            <ul className="space-y-3 text-neutral-400" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}>
-              <li className="flex items-center gap-3">
-                <span className="text-[#FAFAFA]">📍</span> Nairobi, Kenya
+            <ul className="space-y-4 text-neutral-400" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 400 }}>
+              <li className="flex flex-col items-center gap-1">
+                <span className="text-white text-[10px] tracking-[0.2em] font-bold opacity-50">ADDRESS</span>
+                <span>Nairobi, Kenya</span>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#FAFAFA]">📞</span> +254 758 264 337
+              <li className="flex flex-col items-center gap-1">
+                <span className="text-white text-[10px] tracking-[0.2em] font-bold opacity-50">PHONE</span>
+                <a href="tel:+254758264337" className="hover:text-white transition-colors">+254 758 264 337</a>
               </li>
-              <li className="flex items-center gap-3">
-                <span className="text-[#FAFAFA]">📧</span> tobillionhomes@gmail.com
+              <li className="flex flex-col items-center gap-1">
+                <span className="text-white text-[10px] tracking-[0.2em] font-bold opacity-50">EMAIL</span>
+                <a href="mailto:tobillionhomes@gmail.com" className="hover:text-white transition-colors">tobillionhomes@gmail.com</a>
               </li>
             </ul>
           </div>

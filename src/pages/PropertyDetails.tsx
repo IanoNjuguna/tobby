@@ -52,7 +52,7 @@ export default function PropertyDetails() {
       </div>
 
       <div className="relative z-10">
-        <main className="pt-32 pb-20 max-w-7xl mx-auto px-6">
+        <main className="container-standard pt-32 pb-20">
           {/* Header */}
           <div className="mb-12">
             <div className="flex flex-wrap items-center gap-4 mb-4">

@@ -179,3 +179,13 @@
     line-height: 1.5;
   }
 }
+
+@layer components {
+  .container-standard {
+    @apply max-w-7xl mx-auto px-6 sm:px-8;
+  }
+
+  .section-padding {
+    @apply py-20 sm:py-32;
+  }
+}

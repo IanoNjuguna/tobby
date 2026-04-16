@@ -7,9 +7,9 @@ interface HeroProps {
 
 const Hero = ({ heroImage }: HeroProps) => {
   return (
-    <section className="relative min-h-screen pt-20 overflow-hidden">
+    <section id="properties" className="section-padding bg-black relative overflow-hidden">
       <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
-      <div className="relative z-10 max-w-7xl mx-auto px-8 min-h-[calc(100vh-80px)] flex items-center py-20">
+      <div className="container-standard relative z-10 min-h-[calc(100vh-80px)] flex items-center py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
           {/* Left Column: Content */}
           <motion.div 
@@ -22,7 +22,7 @@ const Hero = ({ heroImage }: HeroProps) => {
               It all starts with the perfect residence.
             </h2>
             <p className="max-w-xl text-lg text-white/80 mb-12 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
-              We specialize in the exclusive and iconic homes of Westlands, Riverside, Karen, Runda, Kitisuru, Loresho, Kilimani, Kileleshwa, Parklands, Kiambu Road and Syokimau.
+              We curate iconic homes in Westlands, Riverside, Karen, Runda, Kitisuru, Loresho, Kilimani, Kileleshwa, Parklands, Kiambu Road and Syokimau.
             </p>
             <div className="flex flex-col gap-5 sm:flex-row">
               <Link to="/property" className="inline-flex items-center justify-center bg-white px-10 py-5 text-black text-sm tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_white] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>

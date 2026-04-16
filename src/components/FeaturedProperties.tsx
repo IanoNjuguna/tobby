@@ -61,8 +61,8 @@ const FeaturedProperties = ({ properties }: FeaturedPropertiesProps) => {
   };
 
   return (
-    <section id="properties" className="relative pt-8 pb-20 sm:pb-32 overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-8">
+    <section id="properties" className="section-padding bg-black relative overflow-hidden">
+      <div className="container-standard relative z-10">
         <div className="mb-20">
           <h2
             className="text-4xl sm:text-6xl text-white mb-6"

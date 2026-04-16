@@ -27,7 +27,7 @@ export default function PropertyBlog() {
 
   return (
     <>
-      <main className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
+      <main className="container-standard pt-32 pb-20">
         {/* Header Section */}
         <div className="mb-16">
           <motion.div
@@ -47,13 +47,13 @@ export default function PropertyBlog() {
           </motion.div>
 
           {/* Filter System */}
-          <div className="flex items-center gap-6 mt-16 relative">
+          <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-4 sm:gap-6 mt-16 relative">
             <button
               onClick={() => {
                 setSelectedTypes([]);
                 setIsFilterDropdownOpen(false);
               }}
-              className={`px-10 py-4 text-xs tracking-[0.2em] font-bold transition-all border ${selectedTypes.length === 0
+              className={`px-6 sm:px-10 py-2 sm:py-4 text-[10px] sm:text-xs tracking-[0.2em] font-bold transition-all border ${selectedTypes.length === 0
                 ? 'bg-[#FAFAFA] text-black border-[#FAFAFA] shadow-[4px_4px_0px_0px_#F97316]'
                 : 'text-white/40 border-white/10 hover:border-white/40'
                 }`}
@@ -65,7 +65,7 @@ export default function PropertyBlog() {
             <div className="relative">
               <button
                 onClick={() => setIsFilterDropdownOpen(!isFilterDropdownOpen)}
-                className={`px-10 py-4 text-xs tracking-[0.2em] font-bold transition-all border flex items-center gap-4 ${selectedTypes.length > 0 || isFilterDropdownOpen
+                className={`px-6 sm:px-10 py-2 sm:py-4 text-[10px] sm:text-xs tracking-[0.2em] font-bold transition-all border flex items-center gap-4 ${selectedTypes.length > 0 || isFilterDropdownOpen
                    ? 'bg-white text-black border-white shadow-[4px_4px_0px_0px_#F97316]'
                   : 'text-white/40 border-white/10 hover:border-white/40'
                   }`}
@@ -73,7 +73,7 @@ export default function PropertyBlog() {
               >
                 FILTERS {selectedTypes.length > 0 && `(${selectedTypes.length})`}
                 <svg 
-                  width="12" height="8" viewBox="0 0 12 8" fill="none" 
+                  width="10" height="6" viewBox="0 0 12 8" fill="none" 
                   className={`transition-transform duration-300 ${isFilterDropdownOpen ? 'rotate-180' : ''}`}
                 >
                   <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" />

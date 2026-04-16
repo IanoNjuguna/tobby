@@ -35,6 +35,14 @@ const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
           </div>
           <div className="flex flex-col gap-6">
             <Link
+              to="/"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl font-bold tracking-wider text-white hover:text-[#FAFAFA] transition-colors"
+              style={{ fontFamily: 'Poppins, sans-serif' }}
+            >
+              HOME
+            </Link>
+            <Link
               to="/property"
               onClick={() => setIsMenuOpen(false)}
               className="text-2xl font-bold tracking-wider text-[#FAFAFA] hover:text-[#F97316] transition-colors"

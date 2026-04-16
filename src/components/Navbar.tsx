@@ -9,18 +9,11 @@ const Navbar = ({ isScrolled, setIsMenuOpen }: NavbarProps) => {
   return (
     <nav className={`inset-x-0 top-0 z-50 backdrop-blur-md bg-black/30 border-b border-white/10 transition-all duration-300 ${isScrolled ? 'absolute' : 'fixed'
       }`}>
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 sm:px-8 py-5">
+      <div className="container-standard flex justify-between items-center py-5">
         <Link to="/" className="text-xl sm:text-2xl tracking-tight text-white" style={{ fontFamily: 'Poppins, sans-serif', fontWeight: 700 }}>
           TOBILLION HOMES
         </Link>
         <div className="flex gap-4 sm:gap-12 items-center">
-          <Link to="/property" className="hidden md:block text-white/80 hover:text-white transition-colors text-sm tracking-wide" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>
-            PUBLIC LISTINGS
-          </Link>
-          <a href="#about" className="hidden md:block text-white/80 hover:text-white transition-colors text-sm tracking-wide" style={{ fontFamily: 'Space Grotesk, sans-serif', fontWeight: 500 }}>
-            ABOUT
-          </a>
-
           {/* Desktop Socials */}
           <div className="hidden lg:flex items-center gap-6 border-l border-white/10 pl-12 ml-4">
             <a href="https://twitter.com/tobillionhomes" target="_blank" rel="noopener noreferrer" className="text-white/60 hover:text-white transition-colors">

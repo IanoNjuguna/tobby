@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <section id="about" className="relative py-20 sm:py-32 overflow-hidden">
-      <div className="relative z-10 max-w-7xl mx-auto px-8">
+    <section id="about" className="section-padding relative overflow-hidden">
+      <div className="container-standard relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div className="hidden lg:block group relative overflow-hidden border border-white/5 shadow-[8px_8px_0px_0px_transparent] hover:shadow-[8px_8px_0px_0px_#F97316] transition-shadow duration-300">
             <img
