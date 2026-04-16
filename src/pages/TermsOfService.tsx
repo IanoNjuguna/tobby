@@ -29,7 +29,7 @@ export default function TermsOfService() {
               ABOUT
             </a>
             <button
-              className="hidden sm:block px-8 py-2.5 bg-[#C084FC] text-black hover:bg-[#F97316] transition-all text-xs sm:text-sm tracking-widest font-bold shadow-[3px_3px_0px_0px_#F97316] hover:shadow-[3px_3px_0px_0px_#C084FC] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="hidden sm:block px-8 py-2.5 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all text-xs sm:text-sm tracking-widest font-bold shadow-[3px_3px_0px_0px_#F97316] hover:shadow-[3px_3px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               CONTACT US
@@ -59,7 +59,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">2. Services Description</h2>
               <p className="leading-relaxed mb-4">
                 Tobillion Homes provides comprehensive real estate concierge services including:
@@ -97,7 +97,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">4. Agency Relationships</h2>
               <p className="leading-relaxed mb-4">
                 Tobillion Homes operates under the following agency relationships:
@@ -129,7 +129,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">6. Property Information and Accuracy</h2>
               <p className="leading-relaxed mb-4">
                 While we strive for accuracy, please note:
@@ -163,7 +163,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">8. Confidentiality and Privacy</h2>
               <p className="leading-relaxed mb-4">
                 We maintain strict confidentiality regarding:
@@ -195,7 +195,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">10. Termination of Services</h2>
               <p className="leading-relaxed mb-4">
                 Services may be terminated under the following conditions:
@@ -227,7 +227,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">12. Intellectual Property</h2>
               <p className="leading-relaxed">
                 All content on our website, including property listings, photographs, videos, and written materials, is protected by copyright and other intellectual property laws. Unauthorized use or reproduction is strictly prohibited.
@@ -241,7 +241,7 @@ export default function TermsOfService() {
               </p>
             </section>
 
-            <section className="p-8 border-l-4 border-[#C084FC] bg-white/5">
+            <section className="p-8 border-l-4 border-[#FAFAFA] bg-white/5">
               <h2 className="text-2xl mb-4 font-bold text-white">14. Contact Information</h2>
               <p className="leading-relaxed mb-4">
                 For questions about these terms or our services:

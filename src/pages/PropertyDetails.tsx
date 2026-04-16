@@ -30,7 +30,7 @@ export default function PropertyDetails() {
   const visibleImages = showAllPhotos ? ATANA_IMAGES : ATANA_IMAGES.slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-[#C084FC] selection:text-black relative">
+    <div className="min-h-screen bg-black text-white selection:bg-[#FAFAFA] selection:text-black relative">
       {/* Dynamic Background Slideshow */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <AnimatePresence mode="wait">
@@ -56,10 +56,10 @@ export default function PropertyDetails() {
       {/* Navigation */}
       <nav className="fixed top-0 inset-x-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold tracking-tight hover:text-[#C084FC] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <Link to="/" className="text-xl font-bold tracking-tight hover:text-[#F97316] transition-colors" style={{ fontFamily: 'Poppins, sans-serif' }}>
             TOBILLION HOMES
           </Link>
-          <Link to="/" className="text-sm font-bold tracking-[0.2em] hover:text-[#C084FC] transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
+          <Link to="/" className="text-sm font-bold tracking-[0.2em] hover:text-[#F97316] transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
             BACK TO LISTINGS
           </Link>
         </div>
@@ -69,7 +69,7 @@ export default function PropertyDetails() {
         {/* Header */}
         <div className="mb-12">
           <div className="flex flex-wrap items-center gap-4 mb-4">
-            <span className="px-3 py-1 bg-[#C084FC] text-black text-[10px] font-bold tracking-widest uppercase">Featured Listing</span>
+            <span className="px-3 py-1 bg-[#FAFAFA] text-black text-[10px] font-bold tracking-widest uppercase">Featured Listing</span>
             <span className="text-white/40 text-[10px] font-bold tracking-widest uppercase">Gikambura, Nairobi</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
@@ -160,7 +160,7 @@ export default function PropertyDetails() {
           </div>
 
           <div className="space-y-12">
-            <div className="bg-neutral-900 border border-white/10 p-10 shadow-[8px_8px_0px_0px_#F97316]">
+            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#F97316] group">
               <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Each Townhouse Features:</h3>
               <ul className="space-y-4">
                 {[
@@ -176,14 +176,14 @@ export default function PropertyDetails() {
                   "A private yard and garden, perfect for relaxation, children’s play, or outdoor hosting"
                 ].map((feature) => (
                   <li key={feature} className="flex gap-4 items-start text-sm text-white/80">
-                    <span className="text-[#C084FC] text-xl leading-none">•</span>
+                    <span className="text-[#FAFAFA] text-xl leading-none">•</span>
                     {feature}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-neutral-900 border border-white/10 p-10 shadow-[8px_8px_0px_0px_#C084FC]">
+            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#FAFAFA] group">
               <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Estate Features & Amenities:</h3>
               <ul className="space-y-4">
                 {[
@@ -201,7 +201,7 @@ export default function PropertyDetails() {
               </ul>
             </div>
 
-            <div className="p-8 border-2 border-[#C084FC] bg-black">
+            <div className="p-8 border-2 border-[#FAFAFA] bg-black">
               <h4 className="text-sm font-bold tracking-widest mb-4 opacity-50" style={{ fontFamily: 'JetBrains Mono, monospace' }}>SALES PRICE:</h4>
               <p className="text-xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 3 Bedroom Townhouse (223 sqm) : From KES 22.5 Million
@@ -212,9 +212,9 @@ export default function PropertyDetails() {
               href="https://wa.me/254758264337"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex items-center justify-center w-full py-6 bg-emerald-500 text-black font-bold tracking-[0.2em] hover:bg-emerald-400 transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#F97316] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="hidden md:inline-flex items-center justify-center w-full py-6 bg-[#FAFAFA] text-black font-bold tracking-[0.2em] hover:bg-[#F97316] transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
             >
-              INQUIRE NOW
+              BOOK A HOUSE TOUR
             </a>
           </div>
         </div>
@@ -226,7 +226,7 @@ export default function PropertyDetails() {
           href="https://wa.me/254758264337"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center w-full py-5 bg-[#C084FC] text-black font-bold tracking-[0.2em] shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_white] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+          className="inline-flex items-center justify-center w-full py-5 bg-[#FAFAFA] text-black font-bold tracking-[0.2em] shadow-[4px_4px_0px_0px_#F97316] hover:bg-[#F97316] hover:shadow-[4px_4px_0px_0px_white] transition-all active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
         >
           BOOK A HOUSE TOUR
         </a>
