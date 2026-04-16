@@ -33,11 +33,11 @@ const PageLayout = ({ children, isHome = false }: PageLayoutProps) => {
   }, [isHome]);
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white">
+    <div className="min-h-screen bg-black text-white">
       <Navbar isScrolled={isScrolled} setIsMenuOpen={setIsMenuOpen} />
       <MobileMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       
-      <main>
+      <main className="bg-gradient-to-b from-emerald-800 via-black to-emerald-900">
         {children}
       </main>
 

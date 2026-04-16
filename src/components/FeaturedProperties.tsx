@@ -61,7 +61,7 @@ const FeaturedProperties = ({ properties }: FeaturedPropertiesProps) => {
   };
 
   return (
-    <section id="properties" className="section-padding bg-black relative overflow-hidden">
+    <section id="properties" className="section-padding bg-transparent relative overflow-hidden">
       <div className="container-standard relative z-10">
         <div className="mb-20">
           <h2

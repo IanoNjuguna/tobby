@@ -39,11 +39,9 @@ export default function App() {
         } />
         <Route path="*" element={
           <PageLayout isHome={true}>
-            <div className="min-h-screen bg-gradient-to-b from-emerald-950 via-black to-emerald-950">
-              <Hero heroImage={heroImage} />
-              <FeaturedProperties properties={properties} />
-              <About />
-            </div>
+            <Hero heroImage={heroImage} />
+            <FeaturedProperties properties={properties} />
+            <About />
           </PageLayout>
         } />
       </Routes>

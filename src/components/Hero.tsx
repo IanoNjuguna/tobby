@@ -7,8 +7,7 @@ interface HeroProps {
 
 const Hero = ({ heroImage }: HeroProps) => {
   return (
-    <section id="properties" className="section-padding bg-black relative overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-3/5 bg-gradient-to-b from-black/40 via-transparent to-transparent" />
+    <section id="hero" className="section-padding bg-transparent relative overflow-hidden">
       <div className="container-standard relative z-10 min-h-[calc(100vh-80px)] flex items-center py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
           {/* Left Column: Content */}

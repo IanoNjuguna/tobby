@@ -48,7 +48,7 @@ export default function PropertyDetails() {
             />
           </motion.div>
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black" />
       </div>
 
       <div className="relative z-10">
