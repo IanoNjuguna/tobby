@@ -124,9 +124,8 @@ export default function PropertyDetails() {
             )}
           </section>
 
-          {/* Description & Features */}
-          <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-20">
-            {/* Main Description */}
+          {/* Description Section */}
+          <div className="max-w-4xl mb-20">
             <div className="prose prose-invert prose-emerald max-w-none">
               <h2 className="text-3xl font-bold mb-8 text-white" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>Overview</h2>
               <div className="text-white/80 leading-relaxed space-y-6 text-lg font-serif">
@@ -145,65 +144,70 @@ export default function PropertyDetails() {
                 </p>
               </div>
             </div>
+          </div>
 
-            <div className="space-y-12">
-              <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#F97316] group">
-                <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Each Townhouse Features:</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Three spacious bedrooms, all ensuite, designed for comfort and privacy",
-                    "Master bedroom occupying its own level, complete with a private terrace and walk-in closet",
-                    "A bright and expansive living and dining area, ideal for family living and entertaining",
-                    "A separate dining area",
-                    "Fully fitted wardrobes with quality joinery",
-                    "A modern kitchen with a dedicated cleaning yard, including provisions for a washing machine and dryer",
-                    "Servant’s Quarter (DSQ) for added convenience",
-                    "A rooftop terrace featuring a kitchen and barbecue area",
-                    "Solar water heating",
-                    "A private yard and garden, perfect for relaxation, children’s play, or outdoor hosting"
-                  ].map((feature) => (
-                    <li key={feature} className="flex gap-4 items-start text-sm text-white/80">
-                      <span className="text-[#FAFAFA] text-xl leading-none">•</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#FAFAFA] group">
-                <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Estate Features & Amenities:</h3>
-                <ul className="space-y-4">
-                  {[
-                    "Cabro-paved internal roads with elegant street lighting",
-                    "Reliable year-round water supply from a permanent on-site borehole",
-                    "Well-managed common areas ensuring an orderly environment",
-                    "Ample parking for two cars per unit",
-                    "Secure, quiet surroundings within a leafy and prestigious neighborhood"
-                  ].map((feature) => (
-                    <li key={feature} className="flex gap-4 items-start text-sm text-white/80">
-                      <span className="text-[#F97316] text-xl leading-none">•</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="p-8 border-2 border-[#FAFAFA] bg-black">
-                <h4 className="text-sm font-bold tracking-widest mb-4 opacity-50" style={{ fontFamily: 'JetBrains Mono, monospace' }}>SALES PRICE:</h4>
-                <p className="text-xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-                  3 Bedroom Townhouse (223 sqm) : From KES 22.5 Million
-                </p>
-              </div>
-
-              <a 
-                href="https://wa.me/254758264337"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden md:inline-flex items-center justify-center w-full py-6 bg-[#FAFAFA] text-black font-bold tracking-[0.2em] hover:bg-[#F97316] transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
-              >
-                BOOK A HOUSE TOUR
-              </a>
+          {/* Features Grid - Now Below Description */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#F97316] group">
+              <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Each Townhouse Features:</h3>
+              <ul className="space-y-4">
+                {[
+                  "Three spacious bedrooms, all ensuite, designed for comfort and privacy",
+                  "Master bedroom occupying its own level, complete with a private terrace and walk-in closet",
+                  "A bright and expansive living and dining area, ideal for family living and entertaining",
+                  "A separate dining area",
+                  "Fully fitted wardrobes with quality joinery",
+                  "A modern kitchen with a dedicated cleaning yard, including provisions for a washing machine and dryer",
+                  "Servant’s Quarter (DSQ) for added convenience",
+                  "A rooftop terrace featuring a kitchen and barbecue area",
+                  "Solar water heating",
+                  "A private yard and garden, perfect for relaxation, children’s play, or outdoor hosting"
+                ].map((feature) => (
+                  <li key={feature} className="flex gap-4 items-start text-sm text-white/80">
+                    <span className="text-[#FAFAFA] text-xl leading-none">•</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#FAFAFA] group">
+              <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Estate Features & Amenities:</h3>
+              <ul className="space-y-4">
+                {[
+                  "Cabro-paved internal roads with elegant street lighting",
+                  "Reliable year-round water supply from a permanent on-site borehole",
+                  "Well-managed common areas ensuring an orderly environment",
+                  "Ample parking for two cars per unit",
+                  "Secure, quiet surroundings within a leafy and prestigious neighborhood"
+                ].map((feature) => (
+                  <li key={feature} className="flex gap-4 items-start text-sm text-white/80">
+                    <span className="text-[#F97316] text-xl leading-none">•</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Pricing & CTA */}
+          <div className="max-w-4xl mx-auto space-y-8">
+            <div className="p-8 border-2 border-[#FAFAFA] bg-black text-center">
+              <h4 className="text-sm font-bold tracking-widest mb-4 opacity-50" style={{ fontFamily: 'JetBrains Mono, monospace' }}>SALES PRICE:</h4>
+              <p className="text-2xl font-bold" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                3 Bedroom Townhouse (223 sqm) : From KES 22.5 Million
+              </p>
+            </div>
+
+            <a 
+              href="https://wa.me/254758264337"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center w-full py-6 bg-[#FAFAFA] text-black font-bold tracking-[0.2em] hover:bg-[#F97316] transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none uppercase"
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+            >
+              BOOK A HOUSE TOUR
+            </a>
           </div>
         </main>
 
