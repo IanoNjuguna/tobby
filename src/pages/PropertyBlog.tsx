@@ -1,21 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { properties } from '../data/properties';
 import PropertyCard from '../components/PropertyCard';
 
 export default function PropertyBlog() {
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [isFilterDropdownOpen, setIsFilterDropdownOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const filterOptions = ["Villas", "Townhouses", "Apartments", "Penthouses"];
@@ -33,24 +26,7 @@ export default function PropertyBlog() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0A] text-white">
-      {/* Navigation */}
-      <nav className={`fixed inset-x-0 top-0 z-[100] transition-all duration-300 border-b ${isScrolled ? 'bg-black/80 backdrop-blur-lg border-white/10 py-4' : 'bg-transparent border-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-8 flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            TOBILLION HOMES
-          </Link>
-          <div className="flex gap-8 items-center">
-            <Link to="/" className="text-sm tracking-widest text-white/60 hover:text-white transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-              HOME
-            </Link>
-            <a href="mailto:tobillionhomes@gmail.com" className="px-6 py-2 bg-white text-black text-[10px] tracking-[0.2em] font-bold hover:bg-[#FAFAFA] transition-colors" style={{ fontFamily: 'JetBrains Mono, monospace' }}>
-              CONTACT
-            </a>
-          </div>
-        </div>
-      </nav>
-
+    <>
       <main className="pt-32 pb-20 px-8 max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="mb-16">
@@ -90,7 +66,7 @@ export default function PropertyBlog() {
               <button
                 onClick={() => setIsFilterDropdownOpen(!isFilterDropdownOpen)}
                 className={`px-10 py-4 text-xs tracking-[0.2em] font-bold transition-all border flex items-center gap-4 ${selectedTypes.length > 0 || isFilterDropdownOpen
-                  ? 'bg-white text-black border-white shadow-[4px_4px_0px_0px_#F97316]'
+                   ? 'bg-white text-black border-white shadow-[4px_4px_0px_0px_#F97316]'
                   : 'text-white/40 border-white/10 hover:border-white/40'
                   }`}
                 style={{ fontFamily: 'JetBrains Mono, monospace' }}
@@ -173,19 +149,6 @@ export default function PropertyBlog() {
           </AnimatePresence>
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-20 px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-          <span className="text-white/40 text-sm tracking-wide" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            © {new Date().getFullYear()} TOBILLION HOMES. ALL RIGHTS RESERVED.
-          </span>
-          <div className="flex gap-10">
-            <Link to="/privacy-policy" className="text-white/40 hover:text-white text-xs tracking-widest transition-colors">PRIVACY</Link>
-            <Link to="/terms-of-service" className="text-white/40 hover:text-white text-xs tracking-widest transition-colors">TERMS</Link>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
