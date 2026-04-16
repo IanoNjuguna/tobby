@@ -44,7 +44,7 @@ const Hero = ({ heroImage }: HeroProps) => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="group relative overflow-hidden border border-white/10 shadow-[8px_8px_0px_0px_transparent] hover:shadow-[8px_8px_0px_0px_#F97316] bg-black/10 transition-shadow duration-300"
+            className="group relative overflow-hidden border border-white/10 shadow-[8px_8px_0px_0px_#F97316] hover:shadow-[8px_8px_0px_0px_white] bg-black/10 transition-shadow duration-300"
           >
             <img
               src={heroImage}

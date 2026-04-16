@@ -22,7 +22,7 @@ export default function PropertyCard({ property }: { property: Property }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.4 }}
-      className="group bg-[#0A0A0A] border border-white/5 hover:border-[#F97316]/50 overflow-hidden transition-all duration-500 hover:shadow-[8px_8px_0px_0px_#F97316] aspect-square relative flex flex-col"
+      className="group bg-[#0A0A0A] border border-white/5 hover:border-[#F97316]/50 overflow-hidden transition-all duration-500 shadow-[8px_8px_0px_0px_#F97316] hover:shadow-[8px_8px_0px_0px_white] aspect-square relative flex flex-col"
     >
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0 overflow-hidden">

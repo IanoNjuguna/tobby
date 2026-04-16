@@ -3,7 +3,7 @@ const About = () => {
     <section id="about" className="section-padding relative overflow-hidden">
       <div className="container-standard relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-          <div className="hidden lg:block group relative overflow-hidden border border-white/5 shadow-[8px_8px_0px_0px_transparent] hover:shadow-[8px_8px_0px_0px_#F97316] transition-shadow duration-300">
+          <div className="hidden lg:block group relative overflow-hidden border border-white/5 shadow-[8px_8px_0px_0px_#F97316] hover:shadow-[8px_8px_0px_0px_white] transition-shadow duration-300">
             <img
               src="/family.jpg"
               alt="Family viewing luxury home"
@@ -48,7 +48,7 @@ const About = () => {
               href="https://wa.me/254758264337"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-10 py-4 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+              className="inline-flex items-center justify-center px-12 py-4 bg-[#FAFAFA] text-black hover:bg-[#F97316] transition-all tracking-widest font-bold shadow-[4px_4px_0px_0px_#F97316] hover:shadow-[4px_4px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               BOOK A HOUSE TOUR

@@ -148,7 +148,7 @@ export default function PropertyDetails() {
 
           {/* Features Grid - Now Below Description */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#F97316] group">
+            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 shadow-[8px_8px_0px_0px_#F97316] hover:shadow-[8px_8px_0px_0px_#FAFAFA] group">
               <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Each Townhouse Features:</h3>
               <ul className="space-y-4">
                 {[
@@ -171,7 +171,7 @@ export default function PropertyDetails() {
               </ul>
             </div>
 
-            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 hover:shadow-[8px_8px_0px_0px_#FAFAFA] group">
+            <div className="bg-neutral-900 border border-white/10 p-10 transition-all duration-300 shadow-[8px_8px_0px_0px_#FAFAFA] hover:shadow-[8px_8px_0px_0px_#F97316] group">
               <h3 className="text-xl font-bold mb-8 tracking-widest uppercase" style={{ fontFamily: 'JetBrains Mono, monospace' }}>Estate Features & Amenities:</h3>
               <ul className="space-y-4">
                 {[
@@ -203,7 +203,7 @@ export default function PropertyDetails() {
               href="https://wa.me/254758264337"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full py-6 bg-[#FAFAFA] text-black font-bold tracking-[0.2em] hover:bg-[#F97316] transition-all shadow-[6px_6px_0px_0px_white] hover:shadow-[6px_6px_0px_0px_#FAFAFA] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none uppercase"
+              className="inline-flex items-center justify-center w-full py-6 bg-[#FAFAFA] text-black font-bold tracking-[0.2em] hover:bg-[#F97316] transition-all shadow-[6px_6px_0px_0px_#F97316] hover:shadow-[6px_6px_0px_0px_white] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none uppercase"
               style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               BOOK A HOUSE TOUR
