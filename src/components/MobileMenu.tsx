@@ -15,7 +15,7 @@ const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ type: "spring", damping: 25, stiffness: 200 }}
-          className="fixed inset-0 z-[100] bg-black p-8 flex flex-col justify-center"
+          className="fixed inset-0 z-[100] bg-gradient-to-b from-emerald-800 via-black to-emerald-900 p-8 flex flex-col justify-center overflow-y-auto"
         >
           <div className="absolute top-8 left-0 right-0 px-8 flex justify-between items-center">
             <div className="p-2">
